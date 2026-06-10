@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Obstella — The Operating System for Women's Hospitals</title>
-<meta name="description" content="Obstella is a complete hospital management system for gynaecology &amp; maternity hospitals — patient flow, surgery billing, lab &amp; ultrasound, dues collection and executive dashboards. Offline-first. Built for Windows.">
+<title>Obstella — Hospital Management, Beautifully Simple</title>
+<meta name="description" content="Obstella is a complete hospital management system — patient flow, surgery billing, lab &amp; ultrasound, dues collection and executive dashboards. Offline-first. Built for Windows.">
 <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;rect width='100' height='100' rx='22' fill='%230a84ff'/&gt;&lt;text x='50' y='68' font-size='52' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'&gt;O&lt;/text&gt;&lt;/svg&gt;">
 <style>
 :root{
@@ -34,6 +34,7 @@ body{
 }
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
+img{display:block;max-width:100%}
 
 /* ---------- NAV ---------- */
 nav{
@@ -42,12 +43,12 @@ nav{
   background:rgba(10,10,12,.72);border-bottom:1px solid var(--border);
 }
 .nav-inner{
-  max-width:1024px;margin:0 auto;display:flex;align-items:center;
+  max-width:1080px;margin:0 auto;display:flex;align-items:center;
   justify-content:space-between;height:52px;padding:0 22px;
 }
 .nav-logo{font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--text)}
 .nav-logo span{color:var(--accent)}
-.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links{display:flex;gap:26px;align-items:center}
 .nav-links a{color:var(--text-dim);font-size:13.5px;transition:color .2s}
 .nav-links a:hover{color:var(--text);text-decoration:none}
 .nav-cta{
@@ -59,8 +60,8 @@ nav{
 
 /* ---------- HERO ---------- */
 .hero{
-  min-height:92vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-  text-align:center;padding:120px 24px 60px;position:relative;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:140px 24px 80px;position:relative;
 }
 .hero::before{
   content:"";position:absolute;inset:0;pointer-events:none;
@@ -80,7 +81,7 @@ nav{
 }
 .hero h2{
   font-size:clamp(20px,3.2vw,30px);font-weight:500;color:var(--text-dim);
-  margin-top:18px;max-width:680px;position:relative;letter-spacing:-.01em;
+  margin-top:18px;max-width:700px;position:relative;letter-spacing:-.01em;
 }
 .hero-ctas{display:flex;gap:18px;margin-top:38px;position:relative;flex-wrap:wrap;justify-content:center}
 .btn{
@@ -93,77 +94,28 @@ nav{
 .btn-ghost:hover{background:rgba(255,255,255,.08);text-decoration:none}
 .hero-meta{margin-top:26px;color:var(--text-faint);font-size:13px;position:relative}
 
-/* hero app mock */
-.hero-mock{
-  margin-top:70px;width:min(920px,94vw);position:relative;
-  border-radius:18px;border:1px solid var(--border);
-  background:linear-gradient(180deg,#111116,#0b0b0f);
-  box-shadow:0 40px 120px rgba(10,132,255,.14),0 12px 40px rgba(0,0,0,.7);
+/* hero screenshot frame */
+.hero-shot{
+  margin-top:74px;width:min(980px,94vw);position:relative;
+  border-radius:18px;border:1px solid rgba(255,255,255,.13);
+  background:#0d0d12;
+  box-shadow:0 40px 120px rgba(10,132,255,.16),0 12px 48px rgba(0,0,0,.75);
   overflow:hidden;
 }
-.mock-titlebar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--border)}
-.mock-dot{width:11px;height:11px;border-radius:50%}
-.mock-body{display:flex;min-height:340px}
-.mock-side{
-  width:170px;border-right:1px solid var(--border);padding:18px 12px;
-  display:flex;flex-direction:column;gap:6px;flex-shrink:0;
-}
-.mock-nav-item{
-  padding:8px 12px;border-radius:9px;font-size:12.5px;color:var(--text-dim);text-align:left;
-}
-.mock-nav-item.active{background:var(--accent-soft);color:var(--accent);font-weight:600}
-.mock-main{flex:1;padding:22px;display:flex;flex-direction:column;gap:18px}
-.mock-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.mock-kpi{
-  background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;
-}
-.mock-kpi .k-label{font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em}
-.mock-kpi .k-value{font-size:22px;font-weight:700;margin-top:4px;letter-spacing:-.02em}
-.mock-chart{
-  flex:1;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;
-  padding:16px;min-height:130px;position:relative;
-}
-.mock-chart .k-label{font-size:10.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em}
-.mock-chart svg{position:absolute;inset:34px 16px 12px 16px;width:calc(100% - 32px);height:calc(100% - 46px)}
+.shot-titlebar{display:flex;gap:7px;padding:13px 16px;border-bottom:1px solid var(--border);background:#101015}
+.shot-dot{width:11px;height:11px;border-radius:50%}
+.hero-shot img{width:100%}
 
 /* ---------- SECTIONS ---------- */
 section{padding:110px 24px;position:relative}
-.section-inner{max-width:1024px;margin:0 auto}
+.section-inner{max-width:1080px;margin:0 auto}
 .section-eyebrow{
   font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px;
 }
 .section-title{
-  font-size:clamp(34px,5.4vw,56px);font-weight:700;letter-spacing:-.025em;line-height:1.08;max-width:760px;
+  font-size:clamp(34px,5.4vw,56px);font-weight:700;letter-spacing:-.025em;line-height:1.08;max-width:780px;
 }
-.section-sub{font-size:clamp(17px,2.2vw,21px);color:var(--text-dim);margin-top:18px;max-width:680px}
-
-/* feature grid */
-.grid{display:grid;gap:18px;margin-top:54px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.grid-2{grid-template-columns:repeat(2,1fr)}
-.card{
-  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:30px;transition:transform .25s,background .25s;
-}
-.card:hover{transform:translateY(-4px);background:var(--bg-card-hover)}
-.card .icon{
-  width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-  font-size:22px;margin-bottom:18px;
-}
-.card h3{font-size:20px;font-weight:600;letter-spacing:-.015em;margin-bottom:8px}
-.card p{font-size:14.5px;color:var(--text-dim)}
-.card .tag{
-  display:inline-block;margin-top:14px;font-size:11.5px;font-weight:600;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--text-faint);
-}
-.card-wide{grid-column:span 2}
-.card-feature-list{margin-top:14px;list-style:none}
-.card-feature-list li{
-  font-size:14px;color:var(--text-dim);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05);
-  display:flex;gap:10px;align-items:baseline;
-}
-.card-feature-list li:last-child{border-bottom:none}
-.card-feature-list li::before{content:"✓";color:var(--green);font-weight:700;font-size:12px}
+.section-sub{font-size:clamp(17px,2.2vw,21px);color:var(--text-dim);margin-top:18px;max-width:700px}
 
 /* big stats band */
 .stats-band{
@@ -175,6 +127,42 @@ section{padding:110px 24px;position:relative}
   -webkit-text-fill-color:transparent;
 }
 .stat .stat-label{font-size:13.5px;color:var(--text-dim);margin-top:6px}
+
+/* ---------- SCREEN SHOWCASES ---------- */
+.showcase{
+  display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center;margin-top:96px;
+}
+.showcase.flip{grid-template-columns:1fr 1.25fr}
+.showcase.flip .show-media{order:2}
+.showcase.flip .show-copy{order:1}
+.show-media{position:relative}
+.show-media img{
+  width:100%;border-radius:14px;border:1px solid rgba(255,255,255,.13);
+  box-shadow:0 30px 90px rgba(0,0,0,.65),0 8px 30px rgba(10,132,255,.08);
+}
+.show-copy .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.show-copy h3{font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.02em;line-height:1.12}
+.show-copy p{font-size:16px;color:var(--text-dim);margin-top:14px}
+.show-points{margin-top:18px;list-style:none}
+.show-points li{
+  font-size:14.5px;color:var(--text-dim);padding:7px 0;display:flex;gap:10px;align-items:baseline;
+}
+.show-points li::before{content:"✓";color:var(--green);font-weight:700;font-size:12px}
+
+/* feature card grid (secondary features) */
+.grid{display:grid;gap:18px;margin-top:54px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:30px;transition:transform .25s,background .25s;
+}
+.card:hover{transform:translateY(-4px);background:var(--bg-card-hover)}
+.card .icon{
+  width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:18px;
+}
+.card h3{font-size:19px;font-weight:600;letter-spacing:-.015em;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--text-dim)}
 
 /* workflow strip */
 .flow{display:flex;gap:0;margin-top:54px;flex-wrap:wrap;justify-content:center;align-items:stretch}
@@ -249,13 +237,27 @@ section{padding:110px 24px;position:relative}
 .roadmap-card h4{font-size:15.5px;font-weight:600;margin-bottom:6px}
 .roadmap-card p{font-size:13px;color:var(--text-dim)}
 
+/* ---------- CONTACT ---------- */
+.contact-band{
+  margin-top:54px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+}
+.contact-card{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:34px 30px;text-align:center;transition:transform .25s,background .25s;
+}
+.contact-card:hover{transform:translateY(-4px);background:var(--bg-card-hover)}
+.contact-card .icon{font-size:30px;margin-bottom:14px}
+.contact-card h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.contact-card a{font-size:15px;word-break:break-all}
+.contact-card p{font-size:13px;color:var(--text-faint);margin-top:6px}
+
 /* ---------- CTA / FOOTER ---------- */
 .cta-final{text-align:center}
 .cta-final .section-title{margin:0 auto}
 footer{
   border-top:1px solid var(--border);padding:44px 24px 60px;color:var(--text-faint);font-size:12.5px;
 }
-.footer-inner{max-width:1024px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .footer-inner a{color:var(--text-dim)}
 
 /* reveal animation */
@@ -263,12 +265,12 @@ footer{
 .reveal.visible{opacity:1;transform:none}
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width:860px){
-  .grid-3,.roadmap-grid{grid-template-columns:1fr 1fr}
+@media (max-width:900px){
+  .grid-3,.roadmap-grid,.contact-band{grid-template-columns:1fr 1fr}
   .stats-band{grid-template-columns:1fr 1fr;gap:34px}
-  .card-wide{grid-column:span 2}
-  .mock-side{display:none}
-  .mock-kpis{grid-template-columns:repeat(2,1fr)}
+  .showcase,.showcase.flip{grid-template-columns:1fr;gap:26px}
+  .showcase.flip .show-media{order:1}
+  .showcase.flip .show-copy{order:2}
 }
 @media (max-width:600px){
   .nav-links{display:none}
@@ -277,8 +279,7 @@ footer{
     background:rgba(10,10,12,.97);padding:18px 22px;gap:16px;border-bottom:1px solid var(--border);
   }
   .nav-burger{display:block}
-  .grid-3,.grid-2,.roadmap-grid{grid-template-columns:1fr}
-  .card-wide{grid-column:span 1}
+  .grid-3,.roadmap-grid,.contact-band{grid-template-columns:1fr}
   .spec-row{grid-template-columns:1fr;gap:6px}
   section{padding:80px 20px}
   .flow-step{min-width:100%;border-radius:0}
@@ -295,66 +296,35 @@ footer{
     <button class="nav-burger" onclick="document.getElementById('navlinks').classList.toggle('open')">☰</button>
     <div class="nav-links" id="navlinks">
       <a href="#overview">Overview</a>
-      <a href="#features">Features</a>
+      <a href="#screens">Screens</a>
       <a href="#workflow">Workflow</a>
       <a href="#specs">Specs</a>
       <a href="#releases">Releases</a>
       <a href="#roadmap">Roadmap</a>
-      <a class="nav-cta" href="https://github.com/mansoorEnno/Hospital-Management" target="_blank" rel="noopener">GitHub</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Get Obstella</a>
     </div>
   </div>
 </nav>
 
 <!-- ================= HERO ================= -->
 <header class="hero" id="top">
-  <div class="hero-eyebrow">For Gynae &amp; Maternity Hospitals</div>
+  <div class="hero-eyebrow">Hospital Management System</div>
   <h1>Obstella</h1>
-  <h2>The operating system for women's hospitals. Patient flow, surgery billing, labs, dues and dashboards — in one beautifully simple desktop app.</h2>
+  <h2>The operating system for modern hospitals. Patient flow, surgery billing, labs, dues and dashboards — in one beautifully simple desktop app.</h2>
   <div class="hero-ctas">
-    <a class="btn btn-primary" href="#releases">Download v1.0.1</a>
-    <a class="btn btn-ghost" href="#features">Explore features</a>
+    <a class="btn btn-primary" href="#contact">Get Obstella v1.0.1</a>
+    <a class="btn btn-ghost" href="#screens">See it in action</a>
   </div>
   <div class="hero-meta">Windows 7 SP1 → Windows 11 · 100% offline · No subscription · No internet required</div>
 
-  <div class="hero-mock reveal">
-    <div class="mock-titlebar">
-      <div class="mock-dot" style="background:#ff5f57"></div>
-      <div class="mock-dot" style="background:#febc2e"></div>
-      <div class="mock-dot" style="background:#28c840"></div>
+  <div class="hero-shot reveal">
+    <div class="shot-titlebar">
+      <div class="shot-dot" style="background:#ff5f57"></div>
+      <div class="shot-dot" style="background:#febc2e"></div>
+      <div class="shot-dot" style="background:#28c840"></div>
     </div>
-    <div class="mock-body">
-      <div class="mock-side">
-        <div class="mock-nav-item active">◉ Dashboard</div>
-        <div class="mock-nav-item">⊕ New Visit</div>
-        <div class="mock-nav-item">⚕ Surgery</div>
-        <div class="mock-nav-item">⎘ Discharge</div>
-        <div class="mock-nav-item">👥 Patients</div>
-        <div class="mock-nav-item">₨ Daily Income</div>
-        <div class="mock-nav-item">◔ Dues</div>
-        <div class="mock-nav-item">⌂ Hospital Map</div>
-      </div>
-      <div class="mock-main">
-        <div class="mock-kpis">
-          <div class="mock-kpi"><div class="k-label">OPD Today</div><div class="k-value" style="color:#7cc0ff">42</div></div>
-          <div class="mock-kpi"><div class="k-label">Admitted</div><div class="k-value" style="color:#bf8cf2">7</div></div>
-          <div class="mock-kpi"><div class="k-label">Income Today</div><div class="k-value" style="color:#5ce0a8">86,500</div></div>
-          <div class="mock-kpi"><div class="k-label">Dues</div><div class="k-value" style="color:#ffb38a">12,300</div></div>
-        </div>
-        <div class="mock-chart">
-          <div class="k-label">Income Trend — This Month</div>
-          <svg viewBox="0 0 400 90" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#0a84ff" stop-opacity=".45"/>
-                <stop offset="1" stop-color="#0a84ff" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <path d="M0,70 C40,62 60,40 100,46 C140,52 160,24 200,30 C240,36 260,14 300,20 C340,26 370,10 400,14 L400,90 L0,90 Z" fill="url(#g1)"/>
-            <path d="M0,70 C40,62 60,40 100,46 C140,52 160,24 200,30 C240,36 260,14 300,20 C340,26 370,10 400,14" fill="none" stroke="#0a84ff" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-      </div>
-    </div>
+    <img src="assets/dashboard.png" alt="Obstella executive dashboard — live KPIs, income and admissions" loading="eager">
   </div>
 </header>
 
@@ -363,7 +333,7 @@ footer{
   <div class="section-inner">
     <div class="section-eyebrow reveal" style="color:var(--accent)">Why Obstella</div>
     <h2 class="section-title reveal">Run the entire hospital.<br>From one screen.</h2>
-    <p class="section-sub reveal">Obstella was purpose-built for gynaecology hospitals and clinics. From the moment a patient walks in to the moment her dues are settled — registration, visits, labs, ultrasound, surgery admission, room assignment, discharge billing and collections all live in one fast, offline desktop application.</p>
+    <p class="section-sub reveal">Obstella was purpose-built for hospitals and clinics. From the moment a patient walks in to the moment the last due is settled — registration, visits, labs, ultrasound, surgery admission, room assignment, discharge billing and collections all live in one fast, offline desktop application.</p>
 
     <div class="stats-band">
       <div class="stat reveal"><div class="stat-value">&lt;2s</div><div class="stat-label">App launch — even on a 4GB Windows 7 PC</div></div>
@@ -374,99 +344,128 @@ footer{
   </div>
 </section>
 
-<!-- ================= FEATURES ================= -->
-<section id="features" style="background:var(--bg-soft)">
+<!-- ================= SCREENS / FEATURES ================= -->
+<section id="screens" style="background:var(--bg-soft)">
   <div class="section-inner">
-    <div class="section-eyebrow reveal" style="color:var(--teal)">Features</div>
+    <div class="section-eyebrow reveal" style="color:var(--teal)">The Product</div>
     <h2 class="section-title reveal">Every department.<br>Thoughtfully engineered.</h2>
-    <p class="section-sub reveal">Twelve integrated modules, each designed around how a real hospital actually works.</p>
+    <p class="section-sub reveal">Not mockups — these are real screens from Obstella v1.0.1.</p>
 
-    <div class="grid grid-3">
-      <div class="card card-wide reveal">
-        <div class="icon" style="background:rgba(10,132,255,.14);color:var(--accent)">📊</div>
-        <h3>Executive Dashboard</h3>
-        <p>Walk in every morning and know exactly how the hospital is doing. Live KPI tiles, income trend charts and a real-time admitted-patients board — switchable across daily, weekly, monthly, quarterly and yearly views.</p>
-        <ul class="card-feature-list">
-          <li>OPD, Lab, Ultrasound &amp; Surgery counts at a glance</li>
-          <li>Income and outstanding dues totals for any period</li>
-          <li>Currently admitted patients with room assignments</li>
-          <li>One-click PDF report for management</li>
+    <div class="showcase reveal">
+      <div class="show-media"><img src="assets/daily-income.png" alt="Daily Income report — grand total, surgery, OPD and lab income with date-range filters" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--green)">Financial Reporting</div>
+        <h3>Know your numbers. Instantly.</h3>
+        <p>Income by day, week, month, quarter or year — grand totals, per-category breakdowns and doctor-wise views, computed in under half a second even across years of records.</p>
+        <ul class="show-points">
+          <li>Pre-aggregated reporting engine — no waiting, ever</li>
+          <li>Group by date, category or doctor</li>
+          <li>One-click export to PDF or CSV</li>
         </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(48,213,200,.13);color:var(--teal)">👤</div>
-        <h3>Patient 360°</h3>
-        <p>Register a patient once. Every visit, surgery, payment and due appears on a single timeline — with searchable directory, filters and CSV export.</p>
-        <span class="tag">Registration · Directory · History</span>
+    <div class="showcase flip reveal">
+      <div class="show-media"><img src="assets/hospital-map.png" alt="Hospital Structure — real-time room occupancy across blocks and floors" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--teal)">Bed Management</div>
+        <h3>Your hospital, at a glance.</h3>
+        <p>Every block, floor and room as live tiles — who's in which bed, which rooms are free, VIP availability — updated the moment an admission or discharge happens.</p>
+        <ul class="show-points">
+          <li>Rooms auto-book on admission, auto-release on discharge</li>
+          <li>Patient name and procedure on every occupied room</li>
+          <li>VIP rooms tracked separately</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(191,90,242,.13);color:var(--purple)">🩺</div>
-        <h3>Smart Visit Entry</h3>
-        <p>One unified form for OPD, Private OPD, Lab and Ultrasound. Pick the patient, tap a visit-type chip, assign the doctor — fees auto-fill and totals calculate themselves.</p>
-        <span class="tag">5 visit types · Auto fees · Backdating</span>
+    <div class="showcase reveal">
+      <div class="show-media"><img src="assets/dues.png" alt="Outstanding Dues worklist — unpaid balances with patient contact numbers" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--amber)">Collections</div>
+        <h3>No rupee left behind.</h3>
+        <p>Every unpaid balance in one prioritised worklist — oldest first, with the patient's mobile number right there for the follow-up call. Click through to record the payment.</p>
+        <ul class="show-points">
+          <li>Days-since-discharge aging on every row</li>
+          <li>Total outstanding always visible</li>
+          <li>One click from due to patient record</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(255,55,95,.13);color:var(--rose)">⚕️</div>
-        <h3>Surgery, Start to Finish</h3>
-        <p>Book the procedure, pick a pre-priced package, assign a room — Block → Floor → Room. The room books itself, and releases itself on discharge.</p>
-        <span class="tag">Admission · Packages · Room auto-booking</span>
+    <div class="showcase flip reveal">
+      <div class="show-media"><img src="assets/patient-list.png" alt="Patient directory with search, filters and CSV export" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--purple)">Patient Records</div>
+        <h3>Every patient. One timeline.</h3>
+        <p>Register once — every visit, surgery, payment and due builds a complete history. Search by name, guardian or mobile; filter by visit type and date; export to CSV.</p>
+        <ul class="show-points">
+          <li>Full visit and admission history per patient</li>
+          <li>Live admitted count in the header</li>
+          <li>Open any record in one click</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(48,209,88,.13);color:var(--green)">🧾</div>
-        <h3>One-Tap Discharge Billing</h3>
-        <p>Final bill, discount, amount paid and balance due — computed instantly. Print an A5 receipt, record the payment mode, done. Length of stay tracked automatically.</p>
-        <span class="tag">Auto billing · Receipts · Cash/Card/Bank</span>
+    <div class="showcase reveal">
+      <div class="show-media"><img src="assets/discharge.png" alt="Discharge and billing — final bill, discount, payment mode and printed receipt" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--rose)">Surgery &amp; Billing</div>
+        <h3>Admission to receipt, one flow.</h3>
+        <p>Book the procedure, assign a pre-priced package and room, then discharge with the final bill, discount and balance computed instantly — and an A5 receipt on the printer.</p>
+        <ul class="show-points">
+          <li>Final bill = package cost − discount, automatic</li>
+          <li>Cash, card or bank payment modes</li>
+          <li>Length of stay tracked automatically</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(255,214,10,.13);color:var(--amber)">💰</div>
-        <h3>Dues Worklist</h3>
-        <p>Every unpaid balance in one prioritised list — oldest first, with the patient's mobile number right there for the follow-up call. Click through to record the payment.</p>
-        <span class="tag">Collections · Aging · Quick-open</span>
+    <div class="showcase flip reveal">
+      <div class="show-media"><img src="assets/visit-entry.png" alt="Visit entry — visit type chips, doctor assignment and automatic fees" loading="lazy"></div>
+      <div class="show-copy">
+        <div class="eyebrow" style="color:var(--accent)">Front Desk</div>
+        <h3>A visit in seconds.</h3>
+        <p>One unified form for OPD, Private OPD, Lab and Ultrasound. Pick the patient, tap a visit-type chip, assign the doctor — fees auto-fill and lab tests aggregate themselves.</p>
+        <ul class="show-points">
+          <li>Multi-select test checklist with automatic totals</li>
+          <li>Queue token printed at registration</li>
+          <li>Backdate entries when catching up paperwork</li>
+        </ul>
       </div>
+    </div>
 
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(10,132,255,.14);color:var(--accent)">🔬</div>
-        <h3>Lab &amp; Ultrasound Catalogue</h3>
-        <p>A configurable test catalogue — CBC, LFT, thyroid profile, obstetric scans and more. Multi-select tests on any visit and fees aggregate automatically.</p>
-        <span class="tag">Test fees · Codes · Turnaround time</span>
-      </div>
-
-      <div class="card reveal">
-        <div class="icon" style="background:rgba(48,213,200,.13);color:var(--teal)">🏥</div>
-        <h3>Live Hospital Map</h3>
-        <p>Your hospital as visual tiles — every block, floor and room with live occupancy. See who's in which bed, spot free VIP rooms, click a room to open the patient.</p>
-        <span class="tag">Bed management · Occupancy · VIP rooms</span>
-      </div>
-
+    <!-- secondary features -->
+    <div class="grid grid-3" style="margin-top:96px">
       <div class="card reveal">
         <div class="icon" style="background:rgba(191,90,242,.13);color:var(--purple)">🔁</div>
         <h3>Referral Tracking</h3>
-        <p>When the OPD doctor recommends a lab test, scan or surgery, Obstella remembers. Pending referrals stay visible until completed — so no patient falls through the cracks.</p>
-        <span class="tag">Care pathways · Follow-up compliance</span>
+        <p>When a doctor recommends a lab test, scan or surgery, Obstella remembers — pending referrals stay visible until completed, so no patient falls through the cracks.</p>
       </div>
-
-      <div class="card card-wide reveal">
+      <div class="card reveal">
         <div class="icon" style="background:rgba(48,209,88,.13);color:var(--green)">🛡️</div>
-        <h3>Built-In Protection</h3>
-        <p>Secure login with account lockout, password recovery via security question or recovery key — and an automatic backup engine that ships with the app.</p>
-        <ul class="card-feature-list">
-          <li>Auto-backup monthly to up to 3 destinations — local, USB, OneDrive or network</li>
-          <li>Integrity-checked, zipped backups with 30-copy retention per destination</li>
-          <li>One-click restore that preserves your current database as a safety copy</li>
-          <li>14-day rolling activity logs</li>
-        </ul>
+        <h3>Backups, Automatic</h3>
+        <p>Monthly auto-backup to up to 3 destinations — local, USB, OneDrive or network — integrity-checked and zipped, with one-click restore.</p>
       </div>
-
+      <div class="card reveal">
+        <div class="icon" style="background:rgba(10,132,255,.14);color:var(--accent)">🔐</div>
+        <h3>Secure Access</h3>
+        <p>Password-protected login with account lockout after failed attempts, plus recovery via security question or recovery key.</p>
+      </div>
       <div class="card reveal">
         <div class="icon" style="background:rgba(255,214,10,.13);color:var(--amber)">⚙️</div>
-        <h3>Your Hospital, Your Rules</h3>
-        <p>Configure everything: doctors and their fees, procedures, surgery packages, visit categories with colours, patient-type pricing and queue token printing.</p>
-        <span class="tag">Master data · Pricing · Tokens</span>
+        <h3>Your Rules</h3>
+        <p>Configure doctors and fees, procedures, surgery packages, test catalogue, visit categories with colours, and patient-type pricing.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon" style="background:rgba(48,213,200,.13);color:var(--teal)">🖨️</div>
+        <h3>Tokens &amp; Receipts</h3>
+        <p>Queue tokens with per-category daily numbering, A5 discharge receipts and PDF management reports — print-ready out of the box.</p>
+      </div>
+      <div class="card reveal">
+        <div class="icon" style="background:rgba(255,55,95,.13);color:var(--rose)">📊</div>
+        <h3>Executive Dashboard</h3>
+        <p>KPI tiles, income trends and a live admitted-patients board — switchable across daily, weekly, monthly, quarterly and yearly views.</p>
       </div>
     </div>
   </div>
@@ -480,7 +479,7 @@ footer{
     <p class="section-sub reveal">Obstella mirrors the real journey of a patient through your hospital — every step hands off cleanly to the next.</p>
 
     <div class="flow reveal">
-      <div class="flow-step"><div class="f-num">1</div><h4>Register</h4><p>New patient in seconds — print her queue token</p></div>
+      <div class="flow-step"><div class="f-num">1</div><h4>Register</h4><p>New patient in seconds — print the queue token</p></div>
       <div class="flow-step"><div class="f-num">2</div><h4>Visit</h4><p>OPD consult, lab tests or ultrasound — fees auto-calculated</p></div>
       <div class="flow-step"><div class="f-num">3</div><h4>Admit</h4><p>Book surgery, package &amp; room — room marks itself booked</p></div>
       <div class="flow-step"><div class="f-num">4</div><h4>Discharge</h4><p>Bill, discount &amp; receipt in one tap — room auto-releases</p></div>
@@ -497,15 +496,14 @@ footer{
     <p class="section-sub reveal">No servers. No cloud bills. No IT department. Obstella installs in minutes and runs for years.</p>
 
     <div class="spec-table reveal">
-      <div class="spec-row"><div class="spec-key">Platform</div><div class="spec-val">Windows desktop application<small>Windows 7 SP1 through Windows 11 · Inno Setup installer</small></div></div>
-      <div class="spec-row"><div class="spec-key">Architecture</div><div class="spec-val">3-layer .NET (Framework 4.8)<small>GHP.Core services · GHP.Data repositories · GHP.UI WinForms</small></div></div>
+      <div class="spec-row"><div class="spec-key">Platform</div><div class="spec-val">Windows desktop application<small>Windows 7 SP1 through Windows 11 · installer included</small></div></div>
+      <div class="spec-row"><div class="spec-key">Architecture</div><div class="spec-val">3-layer .NET (Framework 4.8)<small>Services · data repositories · WinForms UI — engineered for reliability</small></div></div>
       <div class="spec-row"><div class="spec-key">Database</div><div class="spec-val">Embedded SQLite, WAL mode<small>Single-file database — zero administration, years of data in one file</small></div></div>
       <div class="spec-row"><div class="spec-key">Performance</div><div class="spec-val">Pre-aggregated reporting engine<small>Income summaries maintained by database triggers — daily report &lt;500&nbsp;ms, yearly &lt;3&nbsp;s</small></div></div>
       <div class="spec-row"><div class="spec-key">Privacy</div><div class="spec-val">100% offline &amp; on-premise<small>Patient data never leaves the hospital PC</small></div></div>
       <div class="spec-row"><div class="spec-key">Security</div><div class="spec-val">Authenticated access<small>Account lockout after 5 failed attempts · security-question / recovery-key reset</small></div></div>
       <div class="spec-row"><div class="spec-key">Backup</div><div class="spec-val">Automatic, multi-destination<small>Monthly auto-backup to up to 3 locations · integrity-verified · 30-copy retention</small></div></div>
       <div class="spec-row"><div class="spec-key">Printing</div><div class="spec-val">A5 receipts &amp; queue tokens<small>Discharge receipts, visit tokens with per-category daily numbering, PDF reports</small></div></div>
-      <div class="spec-row"><div class="spec-key">Interface</div><div class="spec-val">Custom-themed modern UI<small>KPI tiles, charts, colour-coded categories, responsive sidebar</small></div></div>
       <div class="spec-row"><div class="spec-key">System requirements</div><div class="spec-val">Any PC from the last 15 years<small>4&nbsp;GB RAM is plenty · launches in under 2 seconds</small></div></div>
     </div>
   </div>
@@ -533,7 +531,7 @@ footer{
           <li>Test catalogue refinements — codes, turnaround times and corrected default fees</li>
           <li>Doctor profiles extended with specialty, consultation fee and commission tracking</li>
         </ul>
-        <a class="dl-btn" href="https://github.com/mansoorEnno/Hospital-Management/releases" target="_blank" rel="noopener">⬇ Download from GitHub Releases</a>
+        <a class="dl-btn" href="#contact">⬇ Request the installer</a>
       </div>
 
       <div class="release muted reveal">
@@ -588,26 +586,56 @@ footer{
   </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-eyebrow reveal" style="color:var(--accent)">Contact</div>
+    <h2 class="section-title reveal" style="margin:0 auto">Let's talk about your hospital.</h2>
+    <p class="section-sub reveal" style="margin-left:auto;margin-right:auto">Demos, pricing, installation support or feature requests — reach out directly and we'll get back to you the same day.</p>
+
+    <div class="contact-band">
+      <div class="contact-card reveal">
+        <div class="icon">✉️</div>
+        <h3>Email</h3>
+        <a href="mailto:mansoorijaz246@gmail.com">mansoorijaz246@gmail.com</a>
+        <p>For demos, quotes and support</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="icon">📞</div>
+        <h3>Phone</h3>
+        <a href="tel:+923254002092">+92 325 4002092</a>
+        <p>Mon–Sat, 9am–9pm PKT</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="icon">💬</div>
+        <h3>WhatsApp</h3>
+        <a href="https://wa.me/923254002092" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <p>Fastest way to reach us</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FINAL CTA ================= -->
-<section class="cta-final">
+<section class="cta-final" style="background:var(--bg-soft)">
   <div class="section-inner">
     <h2 class="section-title reveal" style="max-width:none">Ready to run your hospital<br>the modern way?</h2>
-    <p class="section-sub reveal" style="margin-left:auto;margin-right:auto">Free to download. Installs in minutes. Works completely offline.</p>
+    <p class="section-sub reveal" style="margin-left:auto;margin-right:auto">Installs in minutes. Works completely offline. Built for real hospital workflows.</p>
     <div class="hero-ctas reveal">
-      <a class="btn btn-primary" href="https://github.com/mansoorEnno/Hospital-Management/releases" target="_blank" rel="noopener">Download Obstella v1.0.1</a>
-      <a class="btn btn-ghost" href="https://github.com/mansoorEnno/Hospital-Management" target="_blank" rel="noopener">View on GitHub</a>
+      <a class="btn btn-primary" href="https://wa.me/923254002092" target="_blank" rel="noopener">Request a demo</a>
+      <a class="btn btn-ghost" href="mailto:mansoorijaz246@gmail.com">Email us</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-inner">
-    <div>Obstella — The Operating System for Women's Hospitals · © 2026 <span style="opacity:.55">(formerly GHP)</span></div>
+    <div>Obstella — Hospital Management System · © 2026</div>
     <div>
-      <a href="#features">Features</a> &nbsp;·&nbsp;
+      <a href="#screens">Screens</a> &nbsp;·&nbsp;
       <a href="#releases">Releases</a> &nbsp;·&nbsp;
       <a href="#roadmap">Roadmap</a> &nbsp;·&nbsp;
-      <a href="https://github.com/mansoorEnno/Hospital-Management" target="_blank" rel="noopener">GitHub</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
 </footer>
