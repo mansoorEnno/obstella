@@ -1,0 +1,14 @@
+{
+  "provider": "Built-in image generation",
+  "purpose": "Illustrative hospital imagery; not photographs of a customer hospital.",
+  "images": [
+    {
+      "files": ["hospital-reception-640.webp", "hospital-reception-1000.webp", "hospital-reception-1672.webp"],
+      "prompt": "Use case: photorealistic-natural\nAsset type: wide editorial website photograph, 16:9 landscape.\nPrimary request: A cinematic photograph of an immaculate contemporary private hospital reception in Pakistan, believable and functional, with a pearl stone reception desk, warm indirect light, large natural windows and understated midnight navy trim. One professional South Asian receptionist is seen at a distance behind the desk.\nStyle/medium: photorealistic editorial architectural photography, restrained premium hospitality adapted to real private healthcare.\nComposition/framing: wide landscape 16:9, immersive spacious reception with desk and distant receptionist, natural perspective.\nLighting/mood: warm natural daylight, quiet and calm operational environment.\nColor palette/materials: midnight navy accents, pearl-white stone and clinical materials, very subtle champagne metal.\nConstraints: hospital environment must be recognizable, no patients in distress, no text, logos, watermarks, signage or readable screens.\nAvoid: science fiction, futuristic spaceships, glowing UI, luxury travel, posed doctors. Generate exactly one image."
+    },
+    {
+      "files": ["hospital-team-640.webp", "hospital-team-1000.webp", "hospital-team-1672.webp"],
+      "prompt": "Use case: photorealistic-natural\nAsset type: wide editorial final CTA website photograph, 16:9 landscape.\nPrimary request: A South Asian hospital administrator in understated midnight navy professional attire working at a Windows desktop reception workstation in a believable contemporary private hospital in Pakistan. Photograph the administrator from behind and three-quarter, hands near keyboard, face not dominant.\nScene/backdrop: pearl-white clinical reception with pearl stone counter, understated navy trim and very subtle champagne metal, cohesive restrained premium hospitality adapted to real private healthcare.\nStyle/medium: photorealistic editorial photography, human and grounded.\nComposition/framing: wide landscape 16:9, administrator and desktop on right, uncluttered darker negative space to left for an HTML final CTA.\nLighting/mood: calm warm natural daylight through large windows, gentle indirect light.\nConstraints: desktop screen is blurred and unreadable, ordinary credible Windows workstation hardware, no text, logos, watermarks, charts or invented software UI.\nAvoid: science fiction, futuristic spaceships, glowing UI, luxury travel, stock doctor posing. Generate exactly one image."
+    }
+  ]
+}
